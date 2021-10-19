@@ -1,0 +1,23 @@
+{
+    "name": "qface",
+    "buildsystem": "simple",
+    "build-commands": [
+	"python3 setup.py build",
+	"python3 setup.py install --prefix=/app"
+    ],
+    "sources": [
+	{
+	    "type": "archive",
+            "url": "https://github.com/Pelagicore/qface/archive/refs/tags/2.0.3.tar.gz",
+	    "sha256": "953649cd33db5e097dbca842edc05f93ecf8ddd51429e55e7f7f0a0543f2d973"
+	},
+	{
+	    "type": "patch",
+	    "path": "patches/qface-requires.patch"
+	},
+	{
+	    "type": "patch",
+	    "path": "patches/qface-jinja-fix.patch"
+	}
+    ]
+}

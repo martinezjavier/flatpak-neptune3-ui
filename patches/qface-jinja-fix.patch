@@ -1,0 +1,12 @@
+diff -up qface-2.0.3/qface/generator.py.jinja qface-2.0.3/qface/generator.py
+---qface-2.0.3/qface/generator.py.jinja	2021-04-28 14:05:25.442650209 +0200
++++ qface-2.0.3/qface/generator.py	2021-04-28 14:05:33.790538055 +0200
+@@ -23,7 +23,7 @@ from .idl.domain import System
+ from .idl.listener import DomainListener
+ from .filters import get_filters
+ 
+-from jinja2.debug import make_traceback as _make_traceback
++#from jinja2.debug import make_traceback as _make_traceback
+ 
+ try:
+     from yaml import CLoader as Loader, CDumper as Dumper

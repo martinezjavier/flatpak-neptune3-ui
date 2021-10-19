@@ -1,0 +1,27 @@
+diff -up qface-2.0.3/setup.py.req qface-2.0.3/setup.py
+--- qface-2.0.3/setup.py.req	2021-04-28 14:36:31.299555250 +0200
++++ qface-2.0.3/setup.py	2021-04-28 14:36:38.808454176 +0200
+@@ -44,15 +44,14 @@ setup(
+     packages=find_packages(),
+     include_package_data=True,
+     install_requires=[
+-        'click==6.7',
+-        'antlr4-python3-runtime==4.7.1',
+-        'jinja2==2.10.3',
+-        'path.py==11.0.1',
+-        'pyyaml==5.1',
+-        'typing==3.6.4',
+-        'watchdog==0.8.3',
+-        'six==1.11.0',
+-        'coloredlogs==10.0',
++        'click>=6.7',
++        'antlr4-python3-runtime>=4.7.1',
++        'jinja2>=2.10.3',
++        'path.py==11.5.2',
++        'pyyaml>=5.1',
++        'watchdog>=0.8.3',
++        'six>=1.11.0',
++        'coloredlogs>=10.0',
+     ],
+     extras_require={
+         'dev': [

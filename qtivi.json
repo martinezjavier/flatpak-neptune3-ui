@@ -1,0 +1,19 @@
+{
+    "name": "qtivi",
+    "buildsystem": "qmake",
+    "build-options": {
+	"env" : {
+	    "INSTALL_ROOT" : "/app"
+        }
+    },
+    "config-opts" : [
+        "CONFIG += git_build"
+    ],
+    "sources": [
+	{
+	    "type": "archive",
+            "url": "https://github.com/qt/qtivi/archive/v5.15.1_QtAS/qtivi-v5.15.1_QtAS.tar.gz",
+	    "sha256": "2db101d12047c4236af44cb778712b398e00eb20819752f3f99e0e68048edf70"
+	}
+    ]
+}

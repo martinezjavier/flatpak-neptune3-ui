@@ -1,0 +1,43 @@
+{
+    "id": "io.qt.neptune3-ui",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-21.08",
+    "sdk": "org.kde.Sdk",
+    "command": "neptune3-ui",
+    "finish-args": [
+	"--share=ipc",
+	"--socket=x11",
+	"--socket=wayland",
+	"--device=dri",
+	"--filesystem=host"
+    ],
+    "modules": [
+	"python3-requirements.json",
+	"qface.json",
+	"taglib.json",
+	"qtivi.json",
+	"qtapplicationmanager.json",
+        {
+            "name": "neptune3-ui",
+            "buildsystem": "qmake",
+	    "build-options": {
+		"env" : {
+		    "INSTALL_ROOT" : "/app"
+		}
+	    },
+	    "config-opts" : [
+		"-d",
+		"neptune3-ui.pro",
+                "CONFIG += git_build"
+	    ],
+            "sources": [
+                {
+		    "type": "git",
+		    "url": "git://code.qt.io/qt-apps/neptune3-ui.git",
+		    "tag": "v5.15.1_QtAS"
+		}
+            ]
+        }
+    ]
+}

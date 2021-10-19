@@ -1,0 +1,26 @@
+diff --git a/path.py-11.5.2/path.py b/path.py-11.5.2/path.py
+index 69ac5c131a9..9cdfda14a59 100644
+--- a/path.py-11.5.2/path.py
++++ b/path.py-11.5.2/path.py
+@@ -107,7 +107,7 @@ try:
+     import importlib_metadata
+     __version__ = importlib_metadata.version('path.py')
+ except Exception:
+-    __version__ = 'unknown'
++    __version__ = '11.5.2'
+ 
+ 
+ class TreeWalkWarning(Warning):
+diff --git a/path.py-11.5.2/setup.cfg b/path.py-11.5.2/setup.cfg
+index c85e44d54b7..735290e8757 100644
+--- a/path.py-11.5.2/setup.cfg
++++ b/path.py-11.5.2/setup.cfg
+@@ -4,6 +4,7 @@ universal = 1
+ [metadata]
+ license_file = LICENSE
+ name = path.py
++version = attr: path.__version__
+ author = Jason Orendorff
+ author_email = jason.orendorff@gmail.com
+ maintainer = Jason R. Coombs
+

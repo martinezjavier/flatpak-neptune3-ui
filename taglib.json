@@ -1,0 +1,12 @@
+{
+    "name": "taglib",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [ "-DBUILD_SHARED_LIBS=ON" ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "http://taglib.github.io/releases/taglib-1.12.tar.gz",
+            "sha256": "7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703"
+        }
+    ]
+}
