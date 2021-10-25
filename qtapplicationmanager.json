@@ -1,19 +1,29 @@
 {
-    "name": "qapplicationmanager",
-    "buildsystem": "qmake",
-    "build-options": {
-	"env" : {
-	    "INSTALL_ROOT" : "/app"
-        }
-    },
-    "config-opts" : [
-        "CONFIG += git_build"
-    ],
-    "sources": [
-	{
-	    "type": "archive",
-            "url": "https://github.com/qt/qtapplicationmanager/archive/v5.15.1_QtAS/qtapplicationmanager-v5.15.1_QtAS.tar.gz",
-	    "sha256": "1e43d54dfc8ea2100cb2ab88d0362d210497ba28deadda8ba9e607b51cd48720"
-	}
-    ]
+  "name": "qapplicationmanager",
+  "buildsystem": "qmake",
+  "build-options": {
+    "env": {
+      "INSTALL_ROOT": "/app/qapplicationmanager"
+    }
+  },
+  "config-opts": [
+    "CONFIG += git_build"
+  ],
+  "post-install": [
+    "cp -r /app/qapplicationmanager/usr/* /app",
+    "rm -rf /app/qapplicationmanager",
+    "ln -sf /app/lib/*/libQt5AppMan*.a /app/lib",
+    "ln -sf /app/lib/*/libQt5AppMan*.prl /app/lib",
+    "ln -sf /app/lib/*/libqtyaml.a /app/lib",
+    "for LIB in $(ls /app/lib/lib*.a); do FILENAME=$(basename $LIB); sed -e \"s|\\$\\$\\[QT_INSTALL_LIBS\\]/$FILENAME|/app/lib/$FILENAME|g\" -i /app/lib/*.prl ; done",
+    "sed -e 's@$$QT_MODULE_LIB_BASE@/app/lib@' -i /app/lib/mkspecs/modules/*.pri",
+    "sed -e 's@$$\\[QT_INSTALL_LIBS\\]@/app/lib@' -i /app/lib/mkspecs/modules/qt_ext_yaml.pri"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/qt/qtapplicationmanager/archive/v5.15.1_QtAS/qtapplicationmanager-v5.15.1_QtAS.tar.gz",
+      "sha256": "1e43d54dfc8ea2100cb2ab88d0362d210497ba28deadda8ba9e607b51cd48720"
+    }
+  ]
 }

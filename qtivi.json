@@ -1,19 +1,30 @@
 {
-    "name": "qtivi",
-    "buildsystem": "qmake",
-    "build-options": {
-	"env" : {
-	    "INSTALL_ROOT" : "/app"
-        }
-    },
-    "config-opts" : [
-        "CONFIG += git_build"
-    ],
-    "sources": [
-	{
-	    "type": "archive",
-            "url": "https://github.com/qt/qtivi/archive/v5.15.1_QtAS/qtivi-v5.15.1_QtAS.tar.gz",
-	    "sha256": "2db101d12047c4236af44cb778712b398e00eb20819752f3f99e0e68048edf70"
-	}
-    ]
+  "name": "qtivi",
+  "buildsystem": "qmake",
+  "build-options": {
+    "env": {
+      "INSTALL_ROOT": "/app/qtivi"
+    }
+  },
+  "config-opts": [
+    "CONFIG += git_build"
+  ],
+  "post-install": [
+    "cp -r /app/qtivi/usr/* /app",
+    "rm -rf /app/qtivi",
+    "ln -sf /app/lib/*/libQt5Ivi*.so* /app/lib",
+    "ln -sf /app/lib/*/libQt5Ivi*.a /app/lib",
+    "ln -sf /app/lib/*/libQt5Ivi*.prl /app/lib",
+    "sed -e 's@$$QT_MODULE_LIB_BASE@/app/lib@' -i /app/lib/mkspecs/modules/*.pri",
+    "for i in {1..5}; do sed -e 's@$$QT_MODULE_INCLUDE_BASE@/app/include@' -i /app/lib/mkspecs/modules/*.pri; done",
+    "for LIB in $(ls /app/lib/lib*.so); do FILENAME=$(basename $LIB); sed -e \"s|\\$\\$\\[QT_INSTALL_LIBS\\]/$FILENAME|/app/lib/$FILENAME|g\" -i /app/lib/libQt5Ivi*.prl ; done",
+    "sed -e 's@^IVI_GENERATOR_PATH = .*$@IVI_GENERATOR_PATH = /app/bin/ivigenerator@g' -i /app/lib/mkspecs/features/ivigenerator.prf"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/qt/qtivi/archive/v5.15.1_QtAS/qtivi-v5.15.1_QtAS.tar.gz",
+      "sha256": "2db101d12047c4236af44cb778712b398e00eb20819752f3f99e0e68048edf70"
+    }
+  ]
 }
