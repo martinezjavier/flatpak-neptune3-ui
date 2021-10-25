@@ -1,0 +1,80 @@
+{
+    "name": "python3-qface",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"qface\" --no-build-isolation --ignore-installed six"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/c0/8e/737f0e163c74ae0fc54ae3004843f6b630f6b29c83fe0d3c59e715e3d6f0/path.py-11.0.1.tar.gz",
+            "sha256": "e7eb9d0ca4110d9b4d7c9baa0696d8c94f837d622409cefc5ec9e7c3d02ea11f"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/54/7d/c7c0ad1e32b9f132075967fc353a244eb2b375a3d2f5b0ce612fd96e107e/watchdog-0.8.3.tar.gz",
+            "sha256": "7e65882adb7746039b6f3876ee174952f8eaaa34491ba34333ddf1fe35de4162"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/ec/cc/28444132a25c113149cec54618abc909596f0b272a74c55bab9593f8876c/typing-3.6.4.tar.gz",
+            "sha256": "d400a9344254803a2368533e4533a4200d21eb7b6b729c173bc38201a74db3f2"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/9f/2c/9417b5c774792634834e730932745bc09a7d36754ca00acf1ccd1ac2594d/PyYAML-5.1.tar.gz",
+            "sha256": "436bc774ecf7c103814098159fbb84c2715d25980175292c648f2da143909f95"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz",
+            "sha256": "594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/7b/db/1d037ccd626d05a7a47a1b81ea73775614af83c2b3e53d86a0bb41d8d799/Jinja2-2.10.3.tar.gz",
+            "sha256": "9fe95f19286cfefaa917656583d020be14e7859c6b0252588391e47db34527de"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/cc/3f/2c29224acb2e2df4d2046e4c73ee2662023c58ff5b113c4c1adac0886c43/humanfriendly-10.0.tar.gz",
+            "sha256": "6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/63/09/1da37a51b232eaf9707919123b2413662e95edd50bace5353a548910eb9d/coloredlogs-10.0.tar.gz",
+            "sha256": "b869a2dda3fa88154b9dd850e27828d8755bfab5a838a1c97fbc850c6e377c36"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/95/d9/c3336b6b5711c3ab9d1d3a80f1a3e2afeb9d8c02a7166462f6cc96570897/click-6.7.tar.gz",
+            "sha256": "f15516df478d5a56180fbf80e68f206010e6d160fc39fa508b65e035fd75130b"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/3e/96/aba01b2948ec67f237cd387c022820835ae0d8db5cab4bd404b351660b5e/antlr4-python3-runtime-4.7.1.tar.gz",
+            "sha256": "1b26b72c4492cef310542da10bf6b2ab4aa1775618fc6003f75b55ae9eaa3fd3"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz",
+            "sha256": "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/f9/73/4b8596f132b7454316549cf48d703ac62d7530944934019420dacb495b44/argh-0.24.1.tar.gz",
+            "sha256": "4980eb11339c9954885b8e44a1e39a4a1c114b738a7d8942c08494f4902f82a9"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/3a/8e/5afed785220ef1ca4bb9ea7de05d5465a5185cac859666e4518c3fe1bfe9/pathtools-0.1.1.tar.gz",
+            "sha256": "e75273d89ae70c37ec939745117df34908873a845618117e9ddfae59e147901a"
+        },
+        {
+            "type": "file",
+            "url": "https://github.com/Pelagicore/qface/archive/refs/tags/2.0.3.tar.gz",
+            "sha256": "953649cd33db5e097dbca842edc05f93ecf8ddd51429e55e7f7f0a0543f2d973",
+            "dest-filename": "qface-2.0.3.tar.gz"
+        }
+    ]
+}
