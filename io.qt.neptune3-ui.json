@@ -40,7 +40,7 @@
       "sources": [
         {
           "type": "git",
-          "url": "git://code.qt.io/qt-apps/neptune3-ui.git",
+          "url": "https://codereview.qt-project.org/qt-apps/neptune3-ui",
           "tag": "v5.15.1_QtAS"
         }
       ]
